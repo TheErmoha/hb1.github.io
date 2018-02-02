@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>August Day</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript">
+		$( window ).resize(function() {CenterItem('h1');});
+
+		function GetDifferenceDays(day, month) {
+			var today = new Date();
+			var needDate = new Date(today.getFullYear(), month, day);
+			if (today > needDate) {
+				return (today - new Date(today.getFullYear(), needDate.getMonth(), needDate.getDate())) / 86400000;
+			}
+			else {
+				return (today - new Date(today.getFullYear()-1, needDate.getMonth(), needDate.getDate())) / 86400000;
+			}
+		}
+
+		function CenterItem(entity) {
+			$(entity).css({
+				"top": $(window).height() / 2 - ($(entity).height() / 2), 
+				"left": $(window).width() / 2 - ($(entity).width() / 2)
+			});
+		}
+
+		$(document).ready(function() {		
+			CenterItem('h1');
+			$('h1').html(Math.floor(GetDifferenceDays(31, 6)) + " августа");
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<h1>256 августа</h1>
+</body>
+</html>

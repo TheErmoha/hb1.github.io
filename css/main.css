@@ -1,0 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url("../img/20140810_111345.jpg") fixed center no-repeat;
+	background-size: cover;
+}
+
+h1 {
+	/*text-align: center;*/
+	font-size: 100px;
+	font-family: Verdana;
+	/*height: 150px;*/
+	color: #FFF;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	position: absolute;
+}
